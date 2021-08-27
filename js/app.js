@@ -1,4 +1,4 @@
-let navbar = document.getElementById('navbar__list');
+let navBar = document.getElementById('navbar__list');
 let sections =[...document.getElementsByTagName('section')];
 let sectionNumbers=sections.length;
 /**
@@ -16,12 +16,11 @@ function createNavBar(){
     sectionlink.href="#"+section.getAttribute('id') ;
     sectionlink.innerText="Section "+ (i+1);
     sectionListItem.appendChild(sectionlink);
-    navbar.appendChild(sectionListItem);
+    navBar.appendChild(sectionListItem);
     
   }
 
 }
-//function to change class of the section in view
 function activeClass(){
   for(const section of sections){
     let sectionCoordinate=section.getBoundingClientRect();
@@ -47,7 +46,7 @@ var myVar;
  myVar = setTimeout(hideNavbar, 4000);
 }
 
-//main function
+
 document.addEventListener('scroll',activeClass);
 document.addEventListener('scroll',sleep);
 createNavBar();
